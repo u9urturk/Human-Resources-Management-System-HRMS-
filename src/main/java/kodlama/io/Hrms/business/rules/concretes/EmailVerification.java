@@ -4,7 +4,6 @@ package kodlama.io.Hrms.business.rules.concretes;
 
 import org.springframework.stereotype.Service;
 
-import kodlama.io.Hrms.business.abstracts.UserService;
 import kodlama.io.Hrms.business.rules.abstracts.Rules;
 import kodlama.io.Hrms.dataAccess.abstracts.UserDao;
 

@@ -5,11 +5,11 @@ import java.util.List;
 import kodlama.io.Hrms.core.utilities.results.DataResult;
 import kodlama.io.Hrms.core.utilities.results.Result;
 import kodlama.io.Hrms.entitites.concretes.Employer;
-import kodlama.io.Hrms.entitites.concretes.Dtos.concretes.EmployerDto;
+import kodlama.io.Hrms.entitites.concretes.Dtos.concretes.EmployerRegisterDto;
 
 public interface EmployerService {
 	
-	Result add(EmployerDto employerDto);
+	Result add(EmployerRegisterDto employerDto);
 	Result delete(Employer employer);
 	Result update(Employer employer);
 	

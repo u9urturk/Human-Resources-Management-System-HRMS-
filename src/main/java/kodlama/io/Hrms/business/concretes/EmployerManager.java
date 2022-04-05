@@ -15,7 +15,7 @@ import kodlama.io.Hrms.core.utilities.results.SuccessResult;
 import kodlama.io.Hrms.dataAccess.abstracts.EmployerDao;
 import kodlama.io.Hrms.entitites.concretes.Employer;
 import kodlama.io.Hrms.entitites.concretes.User;
-import kodlama.io.Hrms.entitites.concretes.Dtos.concretes.EmployerDto;
+import kodlama.io.Hrms.entitites.concretes.Dtos.concretes.EmployerRegisterDto;
 @Service
 public class EmployerManager implements EmployerService {
 	private EmployerDao employerDao;
@@ -29,7 +29,7 @@ public class EmployerManager implements EmployerService {
 	}
 
 	@Override
-	public Result add(EmployerDto employerDto) {
+	public Result add(EmployerRegisterDto employerDto) {
 		User user = new User();
 		user.setEmail( employerDto.getEmail());
 		user.setPassword(employerDto.getPassword());

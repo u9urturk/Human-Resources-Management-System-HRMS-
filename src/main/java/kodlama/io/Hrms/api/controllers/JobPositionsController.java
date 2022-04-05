@@ -13,7 +13,6 @@ import kodlama.io.Hrms.business.abstracts.JobPositionService;
 import kodlama.io.Hrms.core.utilities.results.DataResult;
 import kodlama.io.Hrms.core.utilities.results.Result;
 import kodlama.io.Hrms.entitites.concretes.JobPosition;
-import kodlama.io.Hrms.entitites.concretes.Worker;
 
 @RestController
 @RequestMapping("/api/jobpositions")

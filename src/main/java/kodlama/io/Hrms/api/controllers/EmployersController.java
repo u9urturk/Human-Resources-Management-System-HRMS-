@@ -13,7 +13,7 @@ import kodlama.io.Hrms.business.abstracts.EmployerService;
 import kodlama.io.Hrms.core.utilities.results.DataResult;
 import kodlama.io.Hrms.core.utilities.results.Result;
 import kodlama.io.Hrms.entitites.concretes.Employer;
-import kodlama.io.Hrms.entitites.concretes.Dtos.concretes.EmployerDto;
+import kodlama.io.Hrms.entitites.concretes.Dtos.concretes.EmployerRegisterDto;
 
 @RestController
 @RequestMapping("/api/employers")
@@ -30,7 +30,7 @@ public class EmployersController {
 	}
 	
 	@PostMapping("/employeradd")
-	public Result add(@RequestBody EmployerDto employerDto) {
+	public Result add(@RequestBody EmployerRegisterDto employerDto) {
 		
 		return this.employerService.add(employerDto);
 	}

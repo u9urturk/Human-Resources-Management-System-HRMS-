@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 
 import kodlama.io.Hrms.business.abstracts.CandidateService;
 import kodlama.io.Hrms.business.abstracts.UserService;
-import kodlama.io.Hrms.business.rules.abstracts.Rules;
 import kodlama.io.Hrms.business.rules.concretes.IdentityNumberVerification;
 import kodlama.io.Hrms.core.utilities.results.DataResult;
 import kodlama.io.Hrms.core.utilities.results.ErrorResult;
@@ -18,7 +17,7 @@ import kodlama.io.Hrms.core.utilities.results.mernis.MernisVerificationAdapter;
 import kodlama.io.Hrms.dataAccess.abstracts.CandidateDao;
 import kodlama.io.Hrms.entitites.concretes.Candidate;
 import kodlama.io.Hrms.entitites.concretes.User;
-import kodlama.io.Hrms.entitites.concretes.Dtos.concretes.CandidateDto;
+import kodlama.io.Hrms.entitites.concretes.Dtos.concretes.CandidateRegisterDto;
 
 @Service
 public class CandidateManager implements CandidateService {
@@ -37,7 +36,7 @@ public class CandidateManager implements CandidateService {
 		this.rule2 = rule2;
 	}
 	@Override
-	public Result add(CandidateDto candidateDto) {
+	public Result add(CandidateRegisterDto candidateDto) {
 		User user = new User();
 		user.setEmail(candidateDto.getEmail());
 		user.setPassword(candidateDto.getPassword());

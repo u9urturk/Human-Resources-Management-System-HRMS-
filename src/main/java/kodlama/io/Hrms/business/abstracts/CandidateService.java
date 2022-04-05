@@ -5,11 +5,11 @@ import java.util.List;
 import kodlama.io.Hrms.core.utilities.results.DataResult;
 import kodlama.io.Hrms.core.utilities.results.Result;
 import kodlama.io.Hrms.entitites.concretes.Candidate;
-import kodlama.io.Hrms.entitites.concretes.Dtos.concretes.CandidateDto;
+import kodlama.io.Hrms.entitites.concretes.Dtos.concretes.CandidateRegisterDto;
 
 public interface CandidateService {
 	
-	Result add(CandidateDto candidateDto);
+	Result add(CandidateRegisterDto candidateDto);
 	Result delete(Candidate candidate);
 	Result update(Candidate candidate);
 	

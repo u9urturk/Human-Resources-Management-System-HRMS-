@@ -3,11 +3,9 @@ package kodlama.io.Hrms.business.concretes;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 
 import kodlama.io.Hrms.business.abstracts.UserService;
-import kodlama.io.Hrms.business.rules.abstracts.Rules;
 import kodlama.io.Hrms.business.rules.concretes.EmailVerification;
 import kodlama.io.Hrms.core.utilities.results.DataResult;
 import kodlama.io.Hrms.core.utilities.results.ErrorResult;

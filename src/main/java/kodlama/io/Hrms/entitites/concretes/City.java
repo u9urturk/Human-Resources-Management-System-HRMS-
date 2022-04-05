@@ -8,26 +8,18 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 import lombok.Data;
-
-@Data
 @Entity
-@Table(name="workers")
-public class Worker {
+@Data
+@Table(name="city")
+public class City {
 	@Id
-	@GeneratedValue(strategy =GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id")
 	private int id;
 	
-	@Column(name="user_id")
-	private int userId;
+	@Column(name="country_id")
+	private int countryId;
 	
 	@Column(name="name")
 	private String name;
-	
-	@Column(name="surname")
-	private String surname;
-	
-	@Column(name="working_code")
-	private String workingCode;
-	
 }

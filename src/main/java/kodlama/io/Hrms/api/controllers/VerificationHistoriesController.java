@@ -12,7 +12,6 @@ import kodlama.io.Hrms.business.abstracts.VerificationHistoryService;
 import kodlama.io.Hrms.core.utilities.results.DataResult;
 import kodlama.io.Hrms.core.utilities.results.Result;
 import kodlama.io.Hrms.entitites.concretes.VerificationHistory;
-import kodlama.io.Hrms.entitites.concretes.Worker;
 
 @RestController
 @RequestMapping("/api/verificationhistories")

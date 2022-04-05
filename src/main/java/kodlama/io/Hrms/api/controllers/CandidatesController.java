@@ -7,14 +7,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import kodlama.io.Hrms.business.abstracts.CandidateService;
 import kodlama.io.Hrms.core.utilities.results.DataResult;
 import kodlama.io.Hrms.core.utilities.results.Result;
 import kodlama.io.Hrms.entitites.concretes.Candidate;
-import kodlama.io.Hrms.entitites.concretes.Dtos.concretes.CandidateDto;
+import kodlama.io.Hrms.entitites.concretes.Dtos.concretes.CandidateRegisterDto;
 
 @RestController
 @RequestMapping("/api/candidates")
@@ -33,7 +32,7 @@ public class CandidatesController {
 	}
 	
 	@PostMapping("/candidateadd")
-	public Result add(@RequestBody CandidateDto candidateDto) {
+	public Result add(@RequestBody CandidateRegisterDto candidateDto) {
 		return this.candidateService.add(candidateDto);
 	}
 }

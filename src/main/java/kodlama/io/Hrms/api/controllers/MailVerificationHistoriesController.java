@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RestController;
 import kodlama.io.Hrms.business.abstracts.MailVerificationHistoryService;
 import kodlama.io.Hrms.core.utilities.results.DataResult;
 import kodlama.io.Hrms.core.utilities.results.Result;
-import kodlama.io.Hrms.entitites.concretes.Worker;
 import kodlama.io.Hrms.entitites.concretes.mailVerificationHistory;
 
 @RestController

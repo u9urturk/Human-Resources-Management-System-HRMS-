@@ -1,5 +1,7 @@
 package kodlama.io.Hrms.entitites.concretes;
 
+
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -19,4 +21,7 @@ public class JobPosition {
 	
 	@Column(name="position_name")
 	private String positionName;
+	
+	
+	
 }
