@@ -13,6 +13,7 @@ import kodlama.io.Hrms.core.utilities.results.SuccessDataResult;
 import kodlama.io.Hrms.core.utilities.results.SuccessResult;
 import kodlama.io.Hrms.dataAccess.abstracts.AddAJobPositingDao;
 import kodlama.io.Hrms.entitites.concretes.AddAJobPosting;
+import kodlama.io.Hrms.entitites.concretes.Dtos.concretes.PostedPositionsDetailsDto;
 @Service
 public class AddAJobPositingManager implements AddAJobPositingService {
 	
@@ -30,13 +31,13 @@ public class AddAJobPositingManager implements AddAJobPositingService {
 	}
 
 	@Override
-	public DataResult<List<AddAJobPosting>> getByUserIdAndStatus(int userId, boolean status) {
-		return new SuccessDataResult<List<AddAJobPosting>>(this.addAJobPositingDao.getByUserIdAndStatus(userId, status), "Data listelendi");
+	public DataResult<List<AddAJobPosting>> getByUserIdAndStatus(int employerId, boolean status) {
+		return new SuccessDataResult<List<AddAJobPosting>>(this.addAJobPositingDao.getByEmployerIdAndStatus(employerId, status), "Data listelendi");
 	}
 
 	@Override
 	public DataResult<List<AddAJobPosting>> getByUserId(int userId) {
-		return new SuccessDataResult<List<AddAJobPosting>>(this.addAJobPositingDao.findByUserId(userId), "Data listelendi");
+		return new SuccessDataResult<List<AddAJobPosting>>(this.addAJobPositingDao.findByEmployerId(userId), "Data listelendi");
 	}
 
 	@Override
@@ -64,6 +65,11 @@ public class AddAJobPositingManager implements AddAJobPositingService {
 		Sort sort = Sort.by(Sort.Direction.DESC,"releaseDate");
 		
 		return new SuccessDataResult<List<AddAJobPosting>>( this.addAJobPositingDao.findByStatus(status, sort),"Data Yayın tarihine göre sıralandı.");
+	}
+
+	@Override
+	public DataResult<List<PostedPositionsDetailsDto>> getAllPostedPositionDetailsByStatus(boolean status) {
+		return new SuccessDataResult<List<PostedPositionsDetailsDto>>(this.addAJobPositingDao.getAllPostedPositionDetailsByStatus(status));
 	}
 
 }

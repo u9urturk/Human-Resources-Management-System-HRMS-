@@ -18,6 +18,7 @@ import kodlama.io.Hrms.dataAccess.abstracts.CandidateDao;
 import kodlama.io.Hrms.entitites.concretes.Candidate;
 import kodlama.io.Hrms.entitites.concretes.User;
 import kodlama.io.Hrms.entitites.concretes.Dtos.concretes.CandidateRegisterDto;
+import kodlama.io.Hrms.entitites.concretes.Dtos.concretes.UserWithCandidateDto;
 
 @Service
 public class CandidateManager implements CandidateService {
@@ -96,6 +97,11 @@ public class CandidateManager implements CandidateService {
 	public DataResult<Candidate> getByNationalityIdentity(String nationalityIdentity) {
 		
 		return new SuccessDataResult<Candidate>(this.candidateDao.findByNationalityIdentity(nationalityIdentity));
+	}
+	@Override
+	public DataResult<List<UserWithCandidateDto>> getCandidateDetails() {
+		
+		return new SuccessDataResult<List<UserWithCandidateDto>>(this.candidateDao.getCandidateDetails(), "Join tablo getirildi.");
 	}
 
 	

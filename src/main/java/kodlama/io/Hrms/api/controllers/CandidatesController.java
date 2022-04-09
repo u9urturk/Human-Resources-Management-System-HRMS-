@@ -14,6 +14,7 @@ import kodlama.io.Hrms.core.utilities.results.DataResult;
 import kodlama.io.Hrms.core.utilities.results.Result;
 import kodlama.io.Hrms.entitites.concretes.Candidate;
 import kodlama.io.Hrms.entitites.concretes.Dtos.concretes.CandidateRegisterDto;
+import kodlama.io.Hrms.entitites.concretes.Dtos.concretes.UserWithCandidateDto;
 
 @RestController
 @RequestMapping("/api/candidates")
@@ -29,6 +30,12 @@ public class CandidatesController {
 	@GetMapping("/getallcandidates")
 	public DataResult<List<Candidate>>getAll(){
 		return this.candidateService.getAll();
+	}
+	
+	
+	@GetMapping("/getallcandidatedetails")
+	DataResult<List<UserWithCandidateDto>> getCandidateDetails(){
+		return this.candidateService.getCandidateDetails();
 	}
 	
 	@PostMapping("/candidateadd")

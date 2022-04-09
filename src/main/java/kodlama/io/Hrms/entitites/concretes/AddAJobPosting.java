@@ -22,8 +22,8 @@ public class AddAJobPosting {
 	@Column(name="id")
 	private int id;
 	
-	@Column(name="user_id")
-	private int userId;
+	@Column(name="employer_id")
+	private int employerId;
 	
 	@Column(name="job_position_id")
 	private int jobPositionId;

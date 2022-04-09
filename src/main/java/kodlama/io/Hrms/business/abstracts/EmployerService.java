@@ -6,6 +6,7 @@ import kodlama.io.Hrms.core.utilities.results.DataResult;
 import kodlama.io.Hrms.core.utilities.results.Result;
 import kodlama.io.Hrms.entitites.concretes.Employer;
 import kodlama.io.Hrms.entitites.concretes.Dtos.concretes.EmployerRegisterDto;
+import kodlama.io.Hrms.entitites.concretes.Dtos.concretes.UserWithEmployerDto;
 
 public interface EmployerService {
 	
@@ -14,6 +15,7 @@ public interface EmployerService {
 	Result update(Employer employer);
 	
 	DataResult<List<Employer>> getAll();
+	DataResult<List<UserWithEmployerDto>> getAllEmployerDetails();
 	DataResult<Employer> getById(int id);
 	DataResult<Employer> getByUserId(int userId);
 	

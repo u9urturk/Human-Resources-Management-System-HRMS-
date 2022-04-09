@@ -16,6 +16,7 @@ import kodlama.io.Hrms.dataAccess.abstracts.EmployerDao;
 import kodlama.io.Hrms.entitites.concretes.Employer;
 import kodlama.io.Hrms.entitites.concretes.User;
 import kodlama.io.Hrms.entitites.concretes.Dtos.concretes.EmployerRegisterDto;
+import kodlama.io.Hrms.entitites.concretes.Dtos.concretes.UserWithEmployerDto;
 @Service
 public class EmployerManager implements EmployerService {
 	private EmployerDao employerDao;
@@ -83,6 +84,11 @@ public class EmployerManager implements EmployerService {
 	public DataResult<Employer> getByUserId(int userId) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public DataResult<List<UserWithEmployerDto>> getAllEmployerDetails() {
+		return new SuccessDataResult<List<UserWithEmployerDto>>(this.employerDao.getEmployerDetails(), "Join tablo getirildi");
 	}
 
 

@@ -14,6 +14,7 @@ import kodlama.io.Hrms.business.abstracts.AddAJobPositingService;
 import kodlama.io.Hrms.core.utilities.results.DataResult;
 import kodlama.io.Hrms.core.utilities.results.Result;
 import kodlama.io.Hrms.entitites.concretes.AddAJobPosting;
+import kodlama.io.Hrms.entitites.concretes.Dtos.concretes.PostedPositionsDetailsDto;
 @RestController
 @RequestMapping("/api/addajobpositings")
 public class AddAJobPositingsController {
@@ -27,6 +28,12 @@ public class AddAJobPositingsController {
 	@GetMapping("/getallbystatus")
 	public DataResult<List<AddAJobPosting>> getAllByStatus(@RequestParam boolean status){
 		return this.addAJobPositingService.getAllByStatus(status);
+	}
+	
+	@GetMapping("/getallposteddetails")
+	public DataResult<List<PostedPositionsDetailsDto>> getAllPostedDetailsByStatus(@RequestParam boolean status){
+		//System.out.println( this.addAJobPositingService.getAllPostedPositionDetails().getData().toString());
+		return this.addAJobPositingService.getAllPostedPositionDetailsByStatus(status);
 	}
 	
 	@GetMapping("/getbyuseridandstatus")

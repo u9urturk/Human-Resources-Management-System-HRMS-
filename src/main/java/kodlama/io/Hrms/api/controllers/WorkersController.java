@@ -14,6 +14,7 @@ import kodlama.io.Hrms.business.abstracts.WorkerService;
 import kodlama.io.Hrms.core.utilities.results.DataResult;
 import kodlama.io.Hrms.core.utilities.results.Result;
 import kodlama.io.Hrms.entitites.concretes.Worker;
+import kodlama.io.Hrms.entitites.concretes.Dtos.concretes.UserWithWorkerDto;
 import kodlama.io.Hrms.entitites.concretes.Dtos.concretes.WorkerRegisterDto;
 
 @RestController
@@ -29,6 +30,12 @@ public class WorkersController {
 	@GetMapping("/getallworkers")
 	public DataResult<List<Worker>> getAll(){
 		return this.service.getAll();
+		
+	}
+	
+	@GetMapping("/getallworkersdetails")
+	public DataResult<List<UserWithWorkerDto>> getAllDetails(){
+		return this.service.getAllDetails();
 		
 	}
 	

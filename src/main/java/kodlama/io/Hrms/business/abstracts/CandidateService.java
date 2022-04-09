@@ -6,6 +6,7 @@ import kodlama.io.Hrms.core.utilities.results.DataResult;
 import kodlama.io.Hrms.core.utilities.results.Result;
 import kodlama.io.Hrms.entitites.concretes.Candidate;
 import kodlama.io.Hrms.entitites.concretes.Dtos.concretes.CandidateRegisterDto;
+import kodlama.io.Hrms.entitites.concretes.Dtos.concretes.UserWithCandidateDto;
 
 public interface CandidateService {
 	
@@ -15,6 +16,8 @@ public interface CandidateService {
 	
 	
 	DataResult<List<Candidate>> getAll();
+	DataResult<List<UserWithCandidateDto>> getCandidateDetails();
+	
 	DataResult<Candidate> getByUserId(int userId);
 	DataResult<Candidate> getById(int Id);
 	DataResult<Candidate> getByNationalityIdentity(String nationalityIdentity);

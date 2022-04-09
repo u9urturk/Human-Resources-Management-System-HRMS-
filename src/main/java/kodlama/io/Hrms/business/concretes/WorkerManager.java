@@ -16,6 +16,7 @@ import kodlama.io.Hrms.core.utilities.results.SuccessResult;
 import kodlama.io.Hrms.dataAccess.abstracts.WorkerDao;
 import kodlama.io.Hrms.entitites.concretes.User;
 import kodlama.io.Hrms.entitites.concretes.Worker;
+import kodlama.io.Hrms.entitites.concretes.Dtos.concretes.UserWithWorkerDto;
 import kodlama.io.Hrms.entitites.concretes.Dtos.concretes.WorkerRegisterDto;
 @Service
 public class WorkerManager implements WorkerService {
@@ -88,6 +89,10 @@ public class WorkerManager implements WorkerService {
 	public DataResult<Worker> getByWorkingCode(String workingCode) {
 		// TODO Auto-generated method stub
 		return new  SuccessDataResult<Worker>(this.workerDao.findByWorkingCode(workingCode), "Data listelendi");
+	}
+	@Override
+	public DataResult<List<UserWithWorkerDto>> getAllDetails() {
+		return new SuccessDataResult<List<UserWithWorkerDto>>(this.workerDao.getallWorkerDetails(), "join tablo listelendi");
 	}
 	
 
