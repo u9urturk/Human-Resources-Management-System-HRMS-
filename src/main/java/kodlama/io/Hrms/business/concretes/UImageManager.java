@@ -1,7 +1,7 @@
 package kodlama.io.Hrms.business.concretes;
-
 import java.io.File;
 import java.io.IOException;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,7 +33,10 @@ public class UImageManager implements UImageService {
 		
 		String url = this.UIService.uploadImage(file);
 		if(!url.isEmpty()) {
-			Image image = new Image(0,1,null,url);
+			Image image = new Image();
+			image.setImage_url(url);
+			image.setUserId(1);
+			image.setAddDate(new Date());
 			this.imageDao.save(image);
 			return new SuccessResult("Görsel eklendi");
 		}else {
