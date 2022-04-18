@@ -36,7 +36,6 @@ public class UImageManager implements UImageService {
 			Image image = new Image();
 			image.setImage_url(url);
 			image.setUserId(1);
-			image.setAddDate(new Date());
 			this.imageDao.save(image);
 			return new SuccessResult("Görsel eklendi");
 		}else {
