@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import kodlama.io.Hrms.business.abstracts.CvService;
 import kodlama.io.Hrms.core.utilities.results.DataResult;
 import kodlama.io.Hrms.core.utilities.results.Result;
+import kodlama.io.Hrms.entitites.concretes.Dtos.concretes.CvDetailDto;
 import kodlama.io.Hrms.entitites.concretes.cv.CV;
 
 @RestController
@@ -26,9 +27,20 @@ public class CvController {
 		this.cvService = cvService;
 	}
 	
-	@GetMapping("(getall")
+	@GetMapping("getall")
 	DataResult<List<CV>> getAll(){
 		return this.cvService.getAll();
+	}
+	@GetMapping("getalldetailsnew")
+	DataResult<List<CvDetailDto>> getAllDetailsNEW(){
+		return this.cvService.getAllDetailsNEW();
+	}
+	
+	@GetMapping("getalldetails")
+	DataResult<List<CvDetailDto>> getAllDetails(){
+		return this.cvService.getAllDetails();
+		//System.out.println(this.cvService.getAllDetails().getData());
+		
 	}
 	
 	@PostMapping("/add")

@@ -46,4 +46,9 @@ public class SchoolAttendedManager implements SchoolAttendedService {
 		return null;
 	}
 
+	@Override
+	public DataResult<List<SchoolsAttended>> getByCandidateId(int candidateId) {
+		return new SuccessDataResult<List<SchoolsAttended>>(this.sADao.findByCandidateId(candidateId));
+	}
+
 }

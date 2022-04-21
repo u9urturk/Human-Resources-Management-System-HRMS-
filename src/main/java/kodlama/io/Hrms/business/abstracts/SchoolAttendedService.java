@@ -9,6 +9,7 @@ import kodlama.io.Hrms.entitites.concretes.cv.SchoolsAttended;
 public interface SchoolAttendedService {
 	
 	DataResult<List<SchoolsAttended>> getAll();
+	DataResult<List<SchoolsAttended>> getByCandidateId(int candidateId);
 	
 	Result add(SchoolsAttended schoolsAttended);
 	Result delete(SchoolsAttended schoolsAttended);

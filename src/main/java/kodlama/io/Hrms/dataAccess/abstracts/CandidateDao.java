@@ -16,4 +16,5 @@ public interface CandidateDao  extends JpaRepository<Candidate	, Integer>{
 			+ "(u.id,u.email,c.name,c.surName,c.nationalityIdentity,c.birthYear,c.status) "
 			+ "From User u Inner Join Candidate c On u.id = c.userId ")
 	List<UserWithCandidateDto> getCandidateDetails();
+	
 }
