@@ -31,6 +31,10 @@ public class SchoolAttendedController {
 	public DataResult<List<SchoolsAttended>> getAll(){
 		return this.attendedService.getAll();
 	}
+	@GetMapping("/getallsorted")
+	public DataResult<List<SchoolsAttended>> getAllSorted() {
+		return this.attendedService.getAllSorted();
+	}
 	
 	@GetMapping("/getbycandidateid")
 	public DataResult<List<SchoolsAttended>> getByCandidateId(@RequestParam int candidateId){

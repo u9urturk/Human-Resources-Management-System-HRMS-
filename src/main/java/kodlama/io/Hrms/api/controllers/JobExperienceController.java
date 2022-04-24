@@ -32,6 +32,11 @@ public class JobExperienceController {
 		return this.experienceService.getAll();
 	}
 	
+	@GetMapping("/getallsorted")
+	public DataResult<List<JobExperience>> getAllSorted(){
+		return this.experienceService.getAllSorted();
+	}
+	
 	@PostMapping("/add")
 	public Result add( @RequestBody JobExperience jobExperience) {
 		return this.experienceService.add(jobExperience);

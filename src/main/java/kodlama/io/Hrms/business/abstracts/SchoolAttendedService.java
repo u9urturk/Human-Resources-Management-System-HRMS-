@@ -14,4 +14,5 @@ public interface SchoolAttendedService {
 	Result add(SchoolsAttended schoolsAttended);
 	Result delete(SchoolsAttended schoolsAttended);
 	Result update(SchoolsAttended schoolsAttended);
+	DataResult<List<SchoolsAttended>> getAllSorted();
 }

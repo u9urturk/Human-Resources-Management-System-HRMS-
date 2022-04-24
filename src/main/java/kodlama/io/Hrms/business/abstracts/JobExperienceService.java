@@ -9,6 +9,7 @@ import kodlama.io.Hrms.entitites.concretes.cv.JobExperience;
 public interface JobExperienceService {
 	
 	DataResult<List<JobExperience>> getAll();
+	DataResult<List<JobExperience>> getAllSorted();
 	
 	Result add(JobExperience jobExperience);
 	Result delete(JobExperience jobExperience);

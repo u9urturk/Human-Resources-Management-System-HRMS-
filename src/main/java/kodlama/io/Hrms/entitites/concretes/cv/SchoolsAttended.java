@@ -35,4 +35,12 @@ public class SchoolsAttended {
 	@Column(name="greaduate_history")
 	private Date graduateHistory;
 	
+	public String getgraduateStatus() {
+		if(graduateHistory == null) {
+			return "Okuyor";
+		}else {
+			return "Mezun";
+		}
+	}
+	
 }

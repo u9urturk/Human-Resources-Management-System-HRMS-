@@ -3,6 +3,7 @@ package kodlama.io.Hrms.business.concretes;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import kodlama.io.Hrms.business.abstracts.SchoolAttendedService;
@@ -26,6 +27,12 @@ public class SchoolAttendedManager implements SchoolAttendedService {
 	public DataResult<List<SchoolsAttended>> getAll() {
 		
 		return new SuccessDataResult<List<SchoolsAttended>>(this.sADao.findAll());
+	}
+	
+	@Override
+	public DataResult<List<SchoolsAttended>> getAllSorted() {
+		Sort sort = Sort.by(Sort.Direction.DESC,"graduateHistory");
+		return new SuccessDataResult<List<SchoolsAttended>>(this.sADao.findAll(sort));
 	}
 
 	@Override

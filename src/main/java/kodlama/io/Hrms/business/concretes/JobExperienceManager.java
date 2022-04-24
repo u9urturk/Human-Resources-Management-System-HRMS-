@@ -3,6 +3,7 @@ package kodlama.io.Hrms.business.concretes;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import kodlama.io.Hrms.business.abstracts.JobExperienceService;
@@ -42,9 +43,16 @@ public class JobExperienceManager implements JobExperienceService{
 	}
 
 	@Override
-	public Result update(JobExperience jobExperience) {
+	public Result update(JobExperience jobExperience) {	
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public DataResult<List<JobExperience>> getAllSorted() {
+		Sort sort = Sort.by(Sort.Direction.DESC,"endDate");
+		return new SuccessDataResult<List<JobExperience>>(this.jExperienceDao.findAll(sort), "Liste endDate faktörüne göre en yakın tarihten başlayarak sıralandı.");
+		
 	}
 
 }

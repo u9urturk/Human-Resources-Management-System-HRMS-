@@ -36,12 +36,6 @@ public class CvController {
 		return this.cvService.getAllDetailsNEW();
 	}
 	
-	@GetMapping("getalldetails")
-	DataResult<List<CvDetailDto>> getAllDetails(){
-		return this.cvService.getAllDetails();
-		//System.out.println(this.cvService.getAllDetails().getData());
-		
-	}
 	
 	@PostMapping("/add")
 	Result add(@RequestBody CV cv) {

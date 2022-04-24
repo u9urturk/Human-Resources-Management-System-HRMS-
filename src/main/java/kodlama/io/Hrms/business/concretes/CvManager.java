@@ -75,7 +75,7 @@ public class CvManager implements CvService {
 			cvDetailList.add(cvDetail);
 			
 		}
-		System.out.println(cvDetailList);
+		//System.out.println(cvDetailList);
 		return new SuccessDataResult<List<CvDetailDto>>(cvDetailList, "Başarılı");
 	}
 
